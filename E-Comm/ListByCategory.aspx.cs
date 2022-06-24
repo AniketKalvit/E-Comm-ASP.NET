@@ -10,8 +10,8 @@ namespace E_Comm
     public partial class ListByCategory : System.Web.UI.Page
     {
         string[] categories = { "Furniture", "Electronics", "Camera", "Home Needs" };
-        string[] furniture = { "Sofa 12000 rs", "Chair 999 rs" };
-        string[] eletronics = { "Sony LED 45000 rs", "Intex LCD 22000 rs" };
+        string[] furniture = { "Sofa 12000 rs", "Chair 999 rs","Two Chair 1999" };
+        string[] eletronics = { "Sony LED 45000 rs", "Intex LCD 22000 rs","LG Washing Machine 45000" };
         protected void Page_Load(object sender, EventArgs e)
         {
             // exec the code only for the first time page get load/ on sub sequent req we dont want to exe

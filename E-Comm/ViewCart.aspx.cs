@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,21 @@ namespace E_Comm
                 }
             }
           
+        }
+
+        protected void btnDeleteProducts_Click(object sender, EventArgs e)
+        {
+            ArrayList list = new ArrayList();
+            foreach (ListItem item in CheckBoxList1.Items)
+            {
+                if (!item.Selected)
+                {
+                    list.Add(item.Text);
+                }
+            }
+            CheckBoxList1.Items.Clear();
+            CheckBoxList1.DataSource = list;
+            CheckBoxList1.DataBind();
         }
     }
 }
