@@ -26,7 +26,7 @@ namespace E_Comm
             {
                 Session["UserName"] = res.UserName;
                 Session["Email"] = res.Email;
-                Response.Redirect("");
+                Response.Redirect("~/ListByCategory.aspx");
             }
             else
             {

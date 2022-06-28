@@ -25,7 +25,7 @@ namespace E_Comm
             UsersDAL dal = new UsersDAL();
            int res= dal.SaveNewUser(users);
             if(res == 1){
-                lblMessage.Text = "Success";
+                Response.Redirect("~/Login.aspx");
             }
             else
             {
