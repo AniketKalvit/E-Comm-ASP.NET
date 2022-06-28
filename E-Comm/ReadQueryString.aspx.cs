@@ -11,6 +11,7 @@ namespace E_Comm
     {
         string[] furniture = { "Sofa 12000 rs", "Chair 999 rs" };
         string[] eletronics = { "Sony LED 45000 rs", "Intex LCD 22000 rs" };
+        string[] camera = { "Sony 56000", "Nikon 45000" };
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,7 +25,10 @@ namespace E_Comm
                 {
                     BulletedList1.DataSource = eletronics;
                 }
-
+                else if (str == "camera")
+                {
+                    BulletedList1.DataSource = camera;
+                }
                 BulletedList1.DataBind();
             }
         }

@@ -18,7 +18,10 @@ namespace E_Comm
         {
             Users users = new Users();
             users.FirstName = txtFirstName.Text;
-
+            users.LastName = txtLastName.Text;
+            users.UserName = txtEmail.Text;
+            users.Email = txtEmail.Text;
+            users.Password = txtPassword.Text;
             UsersDAL dal = new UsersDAL();
            int res= dal.SaveNewUser(users);
             if(res == 1){

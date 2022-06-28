@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Common.master.cs" Inherits="E_Comm.Common" %>
+
+<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 209px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td colspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="63px" ImageUrl="~/Images/logo.png" Width="163px" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <uc1:Menu ID="Menu1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ListByCategory.aspx">Furniture</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListByCategory.aspx">Electronics</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ListByCategory.aspx">Camera</asp:HyperLink>
+                </td>
+                <td>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <uc2:Footer ID="Footer1" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -11,7 +11,12 @@ namespace E_Comm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int count = (int)Application["vCount"];
+            Application.Lock();
+            count++;
+            Application["vCount"] = count;
+            Application.UnLock();
+            lblVisitCount.Text = "You are the Visitor number " + Application["vCount"].ToString();
         }
     }
 }

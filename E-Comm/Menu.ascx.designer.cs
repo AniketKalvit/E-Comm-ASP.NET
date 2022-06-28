@@ -11,43 +11,52 @@ namespace E_Comm
 {
 
 
-    public partial class ViewCart
+    public partial class Menu
     {
 
         /// <summary>
-        /// Label1 control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// HyperLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
 
         /// <summary>
-        /// lblMsg control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
 
         /// <summary>
-        /// btnDeleteProducts control.
+        /// HyperLink4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteProducts;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+
+        /// <summary>
+        /// HyperLink5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
     }
 }

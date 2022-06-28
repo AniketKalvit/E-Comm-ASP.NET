@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Configuration;
+
 namespace E_Comm.App_Code
 {
     // DAL - data access layer class
@@ -13,16 +15,21 @@ namespace E_Comm.App_Code
         SqlDataReader dr;
         public UsersDAL()
         {
-            con = new SqlConnection();
+            string str = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+            con = new SqlConnection(str);
         }
         public int SaveNewUser(Users user)
         {
             int result;
             try
             {
-                string str = "insert into Users values(@firstname,@lastname,@email,@password)";
+                string str = "insert into Users values(@firstname,@lastname,@username,@email,@password)";
                 cmd = new SqlCommand(str, con);
                 cmd.Parameters.AddWithValue("@firstname", user.FirstName);
+                cmd.Parameters.AddWithValue("@lastname", user.LastName);
+                cmd.Parameters.AddWithValue("@username", user.UserName);
+                cmd.Parameters.AddWithValue("@email", user.Email);
+                cmd.Parameters.AddWithValue("@password", user.Password);
                 // code goes here to add all parameters one by one
                 con.Open();
                 result = cmd.ExecuteNonQuery();
@@ -39,9 +46,25 @@ namespace E_Comm.App_Code
 
         }
 
-        public int Authenticate(Users user)
+        public Users Login(Users user)
         {
-            return 1;
+            Users users = new Users();
+            string str = "select * from Users where Email=@email";
+            cmd = new SqlCommand(str, con);
+            cmd.Parameters.AddWithValue("@email", user.Email);
+            con.Open();
+            dr = cmd.ExecuteReader();
+            
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    users.FirstName = dr["FirstName"].ToString();
+                    users.UserName = dr["UserName"].ToString();
+                    users.Email = dr["Email"].ToString();
+                }
+            }
+            return users;
         }
     }
 }

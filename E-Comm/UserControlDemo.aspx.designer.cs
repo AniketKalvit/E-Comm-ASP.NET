@@ -11,43 +11,34 @@ namespace E_Comm
 {
 
 
-    public partial class ViewCart
+    public partial class UserControlDemo
     {
 
         /// <summary>
-        /// Label1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// Menu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::E_Comm.Menu Menu1;
 
         /// <summary>
-        /// lblMsg control.
+        /// Footer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
-
-        /// <summary>
-        /// btnDeleteProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeleteProducts;
+        protected global::E_Comm.Footer Footer1;
     }
 }

@@ -1,7 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="E_Comm.Home" %>
-
-<!DOCTYPE html>
-
+<%@ Register TagPrefix="cc" Namespace="E_Comm.App_Code" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -17,13 +15,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="lblVisitCount" runat="server"></asp:Label>
+        </div>
+        <div>
 
             <asp:Image ID="Image1" runat="server" Height="59px" ImageUrl="~/Images/logo.png" Width="137px" />
             <br />
             <br />
             <asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
 &nbsp; |&nbsp;
-            <asp:HyperLink ID="HyperLink2" runat="server">View Cart</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ViewCart.aspx">View Cart</asp:HyperLink>
 
         &nbsp;|
             <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/ListByCategory.aspx">List By Cateory</asp:HyperLink>
@@ -37,7 +38,7 @@
                         <br />
                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=electronics">Electronics</asp:HyperLink>
                         <br />
-                        <asp:HyperLink ID="HyperLink5" runat="server">Camera</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=camera">Camera</asp:HyperLink>
                         <br />
                         <asp:HyperLink ID="HyperLink6" runat="server">Home Needs</asp:HyperLink>
                     </td>
@@ -68,7 +69,7 @@
             </table>
 
         </div>
-
+       <cc:CountedButton ID="cb1" runat="server" />
     </form>
 </body>
 </html>

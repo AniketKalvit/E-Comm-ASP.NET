@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="E_Comm.Registration" %>
 
+<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,6 +23,11 @@
 <body>
     <form id="form1" runat="server">
         <table class="auto-style1">
+            <tr>
+                <td colspan="3">
+                    <uc1:Menu ID="Menu1" runat="server" />
+                </td>
+            </tr>
             <tr>
                 <td colspan="3">
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#0033CC" Text="User Sign Up"></asp:Label>
@@ -104,11 +112,21 @@
                 </td>
                 <td>&nbsp;</td>
             </tr>
+            <tr>
+                <td>
+<asp:Label ID="lblMessage" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc2:Footer ID="Footer1" runat="server" />
+                </td>
+            </tr>
         </table>
-        <div>
-            <asp:Label ID="lblMessage" runat="server"></asp:Label>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
-        </div>
+       
     </form>
 
     <script type="text/javascript">

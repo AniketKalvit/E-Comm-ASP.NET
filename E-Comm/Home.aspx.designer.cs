@@ -24,6 +24,15 @@ namespace E_Comm
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lblVisitCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVisitCount;
+
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -148,5 +157,14 @@ namespace E_Comm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image5;
+
+        /// <summary>
+        /// cb1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        //protected global::E_Comm.App_Code.CountedButton cb1;
     }
 }
