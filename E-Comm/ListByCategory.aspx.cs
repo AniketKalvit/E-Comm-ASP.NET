@@ -63,7 +63,11 @@ namespace E_Comm
                 }
             }
             // data caching
-            Cache.Add("plist", list, null, DateTime.Now.AddSeconds(20), TimeSpan.FromSeconds(0), System.Web.Caching.CacheItemPriority.High, null);
+            Cache.Add("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120), 
+                System.Web.Caching.CacheItemPriority.High, null);
+            // Insert- > same key cache will be override
+            Cache.Insert("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120),
+               System.Web.Caching.CacheItemPriority.High, null);
             Session["plist"] = list;
             Response.Redirect("~/ViewCart.aspx");
         }
