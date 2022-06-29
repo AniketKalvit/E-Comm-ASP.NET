@@ -9,4 +9,6 @@
 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ViewCart.aspx">View Cart</asp:HyperLink>
 &nbsp;|
     <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+&nbsp;|
+    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/ReadQueryString.aspx">Read QueryString</asp:HyperLink>
 </div>

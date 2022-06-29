@@ -22,6 +22,7 @@ namespace E_Comm
             {
                 ddlCategories.DataSource = categories;
                 CheckBoxList1.DataSource = furniture;
+
             }
             Page.DataBind();
             
@@ -61,6 +62,8 @@ namespace E_Comm
                     list.Add(item.Text);
                 }
             }
+            // data caching
+            Cache.Add("plist", list, null, DateTime.Now.AddSeconds(20), TimeSpan.FromSeconds(0), System.Web.Caching.CacheItemPriority.High, null);
             Session["plist"] = list;
             Response.Redirect("~/ViewCart.aspx");
         }

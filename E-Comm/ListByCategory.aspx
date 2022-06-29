@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="ListByCategory.aspx.cs" Inherits="E_Comm.ListByCategory" %>
-
+<%@ OutputCache Location="Server" VaryByParam="None" Duration="20" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {

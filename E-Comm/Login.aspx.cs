@@ -22,14 +22,25 @@ namespace E_Comm
             user.Password = TextBox2.Text;
             UsersDAL dal = new UsersDAL();
            Users res= dal.Login(user);
-            if (res !=null)
+            if (res.Email !=null)
             {
-                Session["UserName"] = res.UserName;
-                Session["Email"] = res.Email;
-                Response.Redirect("~/ListByCategory.aspx");
+                lblMsg.Text = "";
+                if (res.Password == TextBox2.Text)
+                {
+                    Session["UserName"] = res.UserName;
+                    Session["Email"] = res.Email;
+                    Response.Redirect("~/ListByCategory.aspx");
+
+                }
+                else
+                {
+                    lblMsg.Text = "Email Id or Password is wrong";
+
+                }
             }
             else
             {
+                lblMsg.Text = "User does not exists!";
 
             }
         }

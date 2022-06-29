@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="E_Comm.Registration" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="E_Comm.Registration" %>
 
-<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
-<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -19,14 +13,13 @@
             width: 311px;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+   
         <table class="auto-style1">
             <tr>
                 <td colspan="3">
-                    <uc1:Menu ID="Menu1" runat="server" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -122,12 +115,11 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <uc2:Footer ID="Footer1" runat="server" />
-                </td>
+                    &nbsp;</td>
             </tr>
         </table>
        
-    </form>
+   
 
     <script type="text/javascript">
         function check(sender,data) {
@@ -139,5 +131,5 @@
             }
         }
     </script>
-</body>
-</html>
+
+</asp:Content>

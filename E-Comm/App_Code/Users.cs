@@ -8,6 +8,7 @@ namespace E_Comm.App_Code
     //BO- business object
     public class Users
     {
+        public int Id { get; set; }
         public string UserName { get; set; }
         public string  FirstName { get; set; }
         public string LastName { get; set; }

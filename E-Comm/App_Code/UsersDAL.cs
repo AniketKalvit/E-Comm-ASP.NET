@@ -59,9 +59,11 @@ namespace E_Comm.App_Code
             {
                 while (dr.Read())
                 {
+                    users.Id = Convert.ToInt32(dr["Id"]);
                     users.FirstName = dr["FirstName"].ToString();
                     users.UserName = dr["UserName"].ToString();
                     users.Email = dr["Email"].ToString();
+                    users.Password = dr["Password"].ToString();
                 }
             }
             return users;

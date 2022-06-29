@@ -10,26 +10,31 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+   
+   
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 209px;
-        }
+      table{
+          width:100%;
+      }
     </style>
+   
+   
 </head>
 <body>
     <form id="form1" runat="server">
         <table class="auto-style1">
             <tr>
                 <td colspan="2">
-                    <asp:Image ID="Image1" runat="server" Height="63px" ImageUrl="~/Images/logo.png" Width="163px" />
+                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" Height="50px" ImageUrl="~/Images/logo.png" PostBackUrl="~/Home.aspx" Width="152px" />
+                </td>
+                <td>
+                    <uc1:Menu ID="Menu1" runat="server" />
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <uc1:Menu ID="Menu1" runat="server" />
+                <td colspan="3">
+                    
+                    <asp:Image ID="Image1" runat="server" Height="250px" ImageUrl="~/Images/banner.jpg" Width="1255px" />
                 </td>
             </tr>
             <tr>
@@ -41,14 +46,17 @@
                     <br />
                     <br />
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ListByCategory.aspx">Camera</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ListByCategory.aspx">Home Needs</asp:HyperLink>
                 </td>
-                <td>
+                <td colspan="2">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
                 </td>
             </tr>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <uc2:Footer ID="Footer1" runat="server" />
                 </td>
             </tr>
