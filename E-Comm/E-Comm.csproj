@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\BLL\ProductBL.cs" />
+    <Content Include="Admin\CategoryCRUD.aspx" />
+    <Content Include="Admin\ProductCRUD.aspx" />
     <Content Include="Footer.ascx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -89,7 +92,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\CountedButton.cs" />
+    <Compile Include="Admin\DAL\CategoryDAL.cs" />
+    <Compile Include="Admin\DAL\ProductDAL.cs" />
+    <Compile Include="Admin\Models\Category.cs" />
+    <Compile Include="Admin\Models\Product.cs" />
+    <Compile Include="Admin\ProductCRUD.aspx.cs">
+      <DependentUpon>ProductCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductCRUD.aspx.designer.cs">
+      <DependentUpon>ProductCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\CountedButton.cs" />
+    <Compile Include="Admin\CategoryCRUD.aspx.cs">
+      <DependentUpon>CategoryCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CategoryCRUD.aspx.designer.cs">
+      <DependentUpon>CategoryCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DbConnectionStr.cs" />
     <Compile Include="App_Code\UsersDAL.cs" />
     <Compile Include="App_Code\Users.cs" />
     <Compile Include="Common.Master.cs">
@@ -200,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Customer\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

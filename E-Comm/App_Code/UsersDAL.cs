@@ -15,8 +15,7 @@ namespace E_Comm.App_Code
         SqlDataReader dr;
         public UsersDAL()
         {
-            string str = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
-            con = new SqlConnection(str);
+            con = new SqlConnection(DbConnectionStr.GetDbConnectionStr());
         }
         public int SaveNewUser(Users user)
         {
