@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Admin\BLL\ProductBL.cs" />
     <Content Include="Admin\CategoryCRUD.aspx" />
+    <Content Include="Admin\ManageRoles.aspx" />
     <Content Include="Admin\ProductCRUD.aspx" />
     <Content Include="Footer.ascx" />
     <Content Include="Global.asax" />
@@ -79,21 +80,29 @@
     <Content Include="Images\hp-printer.jpg" />
     <Content Include="Images\lenovo-laptop.jpg" />
     <Content Include="Images\logo.png" />
-    <Content Include="ListByCategory.aspx" />
+    <Content Include="Customers\ListByCategory.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.ascx" />
     <Content Include="MultiViewDemo.aspx" />
     <Content Include="PartialCachingDemo.ascx" />
     <Content Include="ReadQueryString.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="UsePartialCachePage.aspx" />
     <Content Include="UserControlDemo.aspx" />
-    <Content Include="ViewCart.aspx" />
+    <Content Include="Customers\ViewCart.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\DAL\CategoryDAL.cs" />
     <Compile Include="Admin\DAL\ProductDAL.cs" />
+    <Compile Include="Admin\ManageRoles.aspx.cs">
+      <DependentUpon>ManageRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageRoles.aspx.designer.cs">
+      <DependentUpon>ManageRoles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Models\Category.cs" />
     <Compile Include="Admin\Models\Product.cs" />
     <Compile Include="Admin\ProductCRUD.aspx.cs">
@@ -138,11 +147,11 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListByCategory.aspx.cs">
+    <Compile Include="Customers\ListByCategory.aspx.cs">
       <DependentUpon>ListByCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListByCategory.aspx.designer.cs">
+    <Compile Include="Customers\ListByCategory.aspx.designer.cs">
       <DependentUpon>ListByCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -181,6 +190,13 @@
     <Compile Include="ReadQueryString.aspx.designer.cs">
       <DependentUpon>ReadQueryString.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,16 +218,18 @@
     <Compile Include="UserControlDemo.aspx.designer.cs">
       <DependentUpon>UserControlDemo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViewCart.aspx.cs">
+    <Compile Include="Customers\ViewCart.aspx.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewCart.aspx.designer.cs">
+    <Compile Include="Customers\ViewCart.aspx.designer.cs">
       <DependentUpon>ViewCart.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common.Master" />
+    <Content Include="Admin\Web.config" />
+    <Content Include="Customers\Web.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -222,7 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Customer\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
