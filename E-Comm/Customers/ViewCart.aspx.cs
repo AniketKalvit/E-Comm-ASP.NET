@@ -21,6 +21,8 @@ namespace E_Comm
                 //    CheckBoxList1.Items.Add(cookie.Values[i]);
                 //}
                 // code to read from session
+                //read from profile
+                //list = Profile.ProductList;
                 if (Session["plist"] != null)
                 {
                     ArrayList list = new ArrayList();

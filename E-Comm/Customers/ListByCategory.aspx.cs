@@ -69,6 +69,7 @@ namespace E_Comm
             Cache.Insert("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120),
                System.Web.Caching.CacheItemPriority.High, null);
             Session["plist"] = list;
+            // Profile.ProductList = list;
             Response.Redirect("~/ViewCart.aspx");
         }
 

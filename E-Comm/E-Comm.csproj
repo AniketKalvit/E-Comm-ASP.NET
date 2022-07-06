@@ -71,6 +71,9 @@
     <Content Include="Admin\CategoryCRUD.aspx" />
     <Content Include="Admin\ManageRoles.aspx" />
     <Content Include="Admin\ProductCRUD.aspx" />
+    <Content Include="Customers\Calculation.ascx" />
+    <Content Include="Customers\Calender.ascx" />
+    <Content Include="Customers\WebPartsDemo.aspx" />
     <Content Include="Footer.ascx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
@@ -129,6 +132,27 @@
     </Compile>
     <Compile Include="Common.Master.designer.cs">
       <DependentUpon>Common.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Calculation.ascx.cs">
+      <DependentUpon>Calculation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\Calculation.ascx.designer.cs">
+      <DependentUpon>Calculation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Calender.ascx.cs">
+      <DependentUpon>Calender.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\Calender.ascx.designer.cs">
+      <DependentUpon>Calender.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\WebPartsDemo.aspx.cs">
+      <DependentUpon>WebPartsDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\WebPartsDemo.aspx.designer.cs">
+      <DependentUpon>WebPartsDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
