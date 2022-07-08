@@ -17,6 +17,42 @@ namespace E_Comm.Admin.DAL
         {
             con = new SqlConnection(DbConnectionStr.GetDbConnectionStr());
         }
+        public List<Product> GetAllProducts()
+        {
+            List<Product> prodlist = new List<Product>();
+            try
+            {
+                string str = "select * from Product";
+                cmd = new SqlCommand(str, con);
+                con.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Product prod = new Product();
+                        prod.Id = Convert.ToInt32(dr["Id"]);
+                        prod.Name = dr["Name"].ToString();
+                        prod.Price = Convert.ToDouble(dr["Price"]);
+                        prod.CategoryId = Convert.ToInt32(dr["CategoryId"]);
+                        prodlist.Add(prod);
+                    }
+                    return prodlist;
+                }
+                else
+                {
+                    return prodlist;
+                }
+            }
+            catch (Exception ex)
+            {
+                return prodlist;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         public int AddProduct(Product prod)
         {
             int res;

@@ -22,6 +22,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <table class="auto-style1">
             <tr>
                 <td colspan="2">

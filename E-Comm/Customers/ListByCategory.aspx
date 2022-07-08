@@ -17,21 +17,29 @@
      
         <div>
 
+            <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
+            </asp:ScriptManagerProxy>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategories_SelectedIndexChanged">
+                    </asp:DropDownList>
+                    <br />
+                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                    </asp:CheckBoxList>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
             <br />
             <table class="auto-style1">
                 <tr>
                     <td aria-orientation="horizontal" class="auto-style2">
-                        <asp:DropDownList ID="ddlCategories" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategories_SelectedIndexChanged">
-                        </asp:DropDownList>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">
                         &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-                        </asp:CheckBoxList>
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">
                         &nbsp;</td>
                 </tr>

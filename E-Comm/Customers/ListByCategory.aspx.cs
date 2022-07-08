@@ -31,46 +31,48 @@ namespace E_Comm
         protected void btnOrder_Click(object sender, EventArgs e)
         {
             // code for cookies
-            //int counter = 0;
-            //string data = "Selected products ";
-            //HttpCookie cookie = new HttpCookie("productlist");
-            //string str = "prod";
+            int counter = 0;
+            string data = "Selected products ";
+            HttpCookie cookie = new HttpCookie("productlist");
+            
+            foreach (ListItem item in CheckBoxList1.Items)
+            {
+                string str = "prod";
+                if (item.Selected)
+                {
+                    counter++;
+                    ViewState["pcount"] = counter;
+                    data += item.Text + "  ";
+                    str = str + counter.ToString();
+                     cookie.Values.Add(str, item.Text);
+                    //prod1  -> chair
+                    //prod2   -> sofa
+                }
+            }
+            // set the cookie
+            Response.Cookies.Add(cookie);
+            //Response.Redirect("~/ViewCart.aspx");
+            lblMsg.Text = data;
+            lblProductCount.Text = "Total number of products " + ViewState["pcount"];
+
+            // code for session
+            //ArrayList list = new ArrayList();
             //foreach (ListItem item in CheckBoxList1.Items)
             //{
             //    if (item.Selected)
             //    {
-            //        counter++;
-            //        ViewState["pcount"] = counter;
-            //        data += item.Text + "  ";
-            //        str = str + counter.ToString();
-            //        cookie.Values.Add(str, item.Text);
+            //        list.Add(item.Text);
             //    }
             //}
-
-            //// set the cookie
-            //Response.Cookies.Add(cookie);
+            //// data caching
+            //Cache.Add("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120), 
+            //    System.Web.Caching.CacheItemPriority.High, null);
+            //// Insert- > same key cache will be override
+            //Cache.Insert("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120),
+            //   System.Web.Caching.CacheItemPriority.High, null);
+            //Session["plist"] = list;
+            //// Profile.ProductList = list;
             //Response.Redirect("~/ViewCart.aspx");
-            //lblMsg.Text = data;
-            //lblProductCount.Text = "Total number of products " + ViewState["pcount"];
-
-            // code for session
-            ArrayList list = new ArrayList();
-            foreach (ListItem item in CheckBoxList1.Items)
-            {
-                if (item.Selected)
-                {
-                    list.Add(item.Text);
-                }
-            }
-            // data caching
-            Cache.Add("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120), 
-                System.Web.Caching.CacheItemPriority.High, null);
-            // Insert- > same key cache will be override
-            Cache.Insert("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120),
-               System.Web.Caching.CacheItemPriority.High, null);
-            Session["plist"] = list;
-            // Profile.ProductList = list;
-            Response.Redirect("~/ViewCart.aspx");
         }
 
         protected void ddlCategories_SelectedIndexChanged(object sender, EventArgs e)

@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Technologies\ASP.NET\AJAX ToolKit\AjaxControlToolkit.Binary.NET45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,6 +75,7 @@
     <Content Include="Admin\CategoryCRUD.aspx" />
     <Content Include="Admin\ManageRoles.aspx" />
     <Content Include="Admin\ProductCRUD.aspx" />
+    <Content Include="AjaxExtensionDemo.aspx" />
     <Content Include="Customers\Calculation.ascx" />
     <Content Include="Customers\Calender.ascx" />
     <Content Include="Customers\WebPartsDemo.aspx" />
@@ -91,6 +96,7 @@
     <Content Include="ReadQueryString.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="sampleBootstrapDemo.aspx" />
     <Content Include="UsePartialCachePage.aspx" />
     <Content Include="UserControlDemo.aspx" />
     <Content Include="Customers\ViewCart.aspx" />
@@ -114,6 +120,13 @@
     </Compile>
     <Compile Include="Admin\ProductCRUD.aspx.designer.cs">
       <DependentUpon>ProductCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxExtensionDemo.aspx.cs">
+      <DependentUpon>AjaxExtensionDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxExtensionDemo.aspx.designer.cs">
+      <DependentUpon>AjaxExtensionDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\CountedButton.cs" />
     <Compile Include="Admin\CategoryCRUD.aspx.cs">
@@ -227,6 +240,13 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sampleBootstrapDemo.aspx.cs">
+      <DependentUpon>sampleBootstrapDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sampleBootstrapDemo.aspx.designer.cs">
+      <DependentUpon>sampleBootstrapDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsePartialCachePage.aspx.cs">
       <DependentUpon>UsePartialCachePage.aspx</DependentUpon>

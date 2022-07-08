@@ -14,27 +14,28 @@ namespace E_Comm
         {
             if (!Page.IsPostBack)
             {
-                // code for read cookie
-                //HttpCookie cookie = Request.Cookies["productlist"];
-                //for (int i = 0; i < cookie.Values.Count; i++)
-                //{
-                //    CheckBoxList1.Items.Add(cookie.Values[i]);
-                //}
-                // code to read from session
-                //read from profile
-                //list = Profile.ProductList;
-                if (Session["plist"] != null)
+                //code for read cookie
+
+               HttpCookie cookie = Request.Cookies["productlist"];
+                for (int i = 0; i < cookie.Values.Count; i++)
                 {
-                    ArrayList list = new ArrayList();
-                    list = (ArrayList)Session["plist"];
-                    CheckBoxList1.DataSource = list;
-                    CheckBoxList1.DataBind();
-                    lblMsg.Text = "";
+                    CheckBoxList1.Items.Add(cookie.Values[i]);
                 }
-                else
-                {
-                    lblMsg.Text = "No items in the cart";
-                }
+               // code to read from session
+               //read from profile
+               //list = Profile.ProductList;
+               // if (Session["plist"] != null)
+               // {
+               //     ArrayList list = new ArrayList();
+               //     list = (ArrayList)Session["plist"];
+               //     CheckBoxList1.DataSource = list;
+               //     CheckBoxList1.DataBind();
+               //     lblMsg.Text = "";
+               // }
+               // else
+               // {
+               //     lblMsg.Text = "No items in the cart";
+               // }
             }
         }
 
