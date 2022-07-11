@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Comm.Customers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace E_Comm
 {
     public partial class ListByCategory : System.Web.UI.Page
     {
-        string[] categories = { "Furniture", "Electronics", "Camera", "Home Needs" };
+       // string[] categories = { "Furniture", "Electronics", "Camera", "Home Needs" };
         string[] furniture = { "Sofa 12000 rs", "Chair 999 rs","Two Chair 1999" };
         string[] eletronics = { "Sony LED 45000 rs", "Intex LCD 22000 rs","LG Washing Machine 45000" };
         string[] camera = { "Sony 56000", "Nikon 45000" };
@@ -20,9 +21,12 @@ namespace E_Comm
             // the code
             if (!Page.IsPostBack)
             {
-                ddlCategories.DataSource = categories;
-                CheckBoxList1.DataSource = furniture;
-
+                CategoryDAL db = new CategoryDAL();
+                List<Category> list = db.GetAllCategories();
+                ddlCategories.DataSource = list;
+                ddlCategories.DataTextField = "CategoryName";
+                ddlCategories.DataValueField = "CategoryId";
+                
             }
             Page.DataBind();
             
@@ -31,48 +35,46 @@ namespace E_Comm
         protected void btnOrder_Click(object sender, EventArgs e)
         {
             // code for cookies
-            int counter = 0;
-            string data = "Selected products ";
-            HttpCookie cookie = new HttpCookie("productlist");
-            
-            foreach (ListItem item in CheckBoxList1.Items)
-            {
-                string str = "prod";
-                if (item.Selected)
-                {
-                    counter++;
-                    ViewState["pcount"] = counter;
-                    data += item.Text + "  ";
-                    str = str + counter.ToString();
-                     cookie.Values.Add(str, item.Text);
-                    //prod1  -> chair
-                    //prod2   -> sofa
-                }
-            }
-            // set the cookie
-            Response.Cookies.Add(cookie);
-            //Response.Redirect("~/ViewCart.aspx");
-            lblMsg.Text = data;
-            lblProductCount.Text = "Total number of products " + ViewState["pcount"];
+            //int counter = 0;
+            //string data = "Selected products ";
+            //HttpCookie cookie = new HttpCookie("productlist");
 
-            // code for session
-            //ArrayList list = new ArrayList();
             //foreach (ListItem item in CheckBoxList1.Items)
             //{
+            //    string str = "p";
             //    if (item.Selected)
             //    {
-            //        list.Add(item.Text);
+            //        counter++;
+            //        ViewState["pcount"] = counter;
+            //        data += item.Text + "  ";
+            //        str = str + counter.ToString();
+            //        cookie.Values.Add(str, item.Text);
             //    }
             //}
-            //// data caching
-            //Cache.Add("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120), 
-            //    System.Web.Caching.CacheItemPriority.High, null);
-            //// Insert- > same key cache will be override
+            //// set the cookie
+            //Response.Cookies.Add(cookie);
+            ////Response.Redirect("~/ViewCart.aspx");
+            //lblMsg.Text = data;
+            //lblProductCount.Text = "Total number of products " + ViewState["pcount"];
+
+            // code for session
+            ArrayList list = new ArrayList();
+            foreach (ListItem item in CheckBoxList1.Items)
+            {
+                if (item.Selected)
+                {
+                    list.Add(item.Text);
+                }
+            }
+            // data caching
+            Cache.Add("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(0),
+                System.Web.Caching.CacheItemPriority.High, null);
+            // Insert- > same key cache will be override
             //Cache.Insert("plist", list, null, DateTime.Now.AddMinutes(20), TimeSpan.FromSeconds(120),
             //   System.Web.Caching.CacheItemPriority.High, null);
-            //Session["plist"] = list;
-            //// Profile.ProductList = list;
-            //Response.Redirect("~/ViewCart.aspx");
+            Session["plist"] = list;
+            // Profile.ProductList = list;
+            Response.Redirect("~/Customers/ViewCart.aspx");
         }
 
         protected void ddlCategories_SelectedIndexChanged(object sender, EventArgs e)

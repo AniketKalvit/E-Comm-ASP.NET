@@ -1,6 +1,12 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Common.Master" AutoEventWireup="true" CodeBehind="ViewCart.aspx.cs" Inherits="E_Comm.ViewCart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .fontColor{
+            color:red;
+            font-size:20px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
@@ -27,7 +33,7 @@
                         </asp:CheckBoxList>
                         <br />
                         <br />
-                        <asp:Label ID="lblMsg" runat="server" ForeColor="#003399"></asp:Label>
+                        <asp:Label ID="lblMsg" runat="server" CssClass="fontColor"></asp:Label>
                     </td>
                 </tr>
                 <tr>

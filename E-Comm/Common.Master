@@ -40,10 +40,10 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ListByCategory.aspx">Furniture</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=Furniture">Furniture</asp:HyperLink>
                     <br />
                     <br />
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ListByCategory.aspx">Electronics</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=Electronics">Electronics</asp:HyperLink>
                     <br />
                     <br />
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ListByCategory.aspx">Camera</asp:HyperLink>

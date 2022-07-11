@@ -160,6 +160,7 @@
     <Compile Include="Customers\Calender.ascx.designer.cs">
       <DependentUpon>Calender.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Customers\CategoryDAL.cs" />
     <Compile Include="Customers\WebPartsDemo.aspx.cs">
       <DependentUpon>WebPartsDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

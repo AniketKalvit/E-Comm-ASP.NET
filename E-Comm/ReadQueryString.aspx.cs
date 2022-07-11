@@ -17,15 +17,15 @@ namespace E_Comm
             if (!Page.IsPostBack)
             {
                 string str = Request.QueryString["category"];
-                if (str == "furniture")
+                if (str == "Furniture")
                 {
                     BulletedList1.DataSource = furniture;
                 }
-               else if (str == "electronics")
+               else if (str == "Electronics")
                 {
                     BulletedList1.DataSource = eletronics;
                 }
-                else if (str == "camera")
+                else if (str == "Camera")
                 {
                     BulletedList1.DataSource = camera;
                 }
