@@ -21,5 +21,13 @@ namespace E_Comm.Customers
             int c = a + b;
             txtresult.Text = c.ToString();
         }
+
+        protected void btnSub_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(txtfirst.Text);
+            int b = Convert.ToInt32(txtsecond.Text);
+            int c = a - b;
+            txtresult.Text = c.ToString();
+        }
     }
 }
